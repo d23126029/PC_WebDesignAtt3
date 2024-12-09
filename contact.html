@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tara Mines</title>
+    <link rel="stylesheet" href="MyCSS.css">
+</head>
+
+<body>
+
+    <!--Navigation Bar Code -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="mine_cycle.html">The Mine Process</a></li>
+			<li><a href="media.html">Gallery</a></li>
+            <li><a href="history.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+<!-- Main Image Displayed on All Pages -->		
+<div class="Aerial_Image_Tara"> 
+        <h1> Contact Information </h1>
+    </div>
+
+<!-- Contact Information / A form for inquires -->
+<section class="contact">
+    <div class="contact-info">
+        <h2>Contact Information</h2>
+        <p>Phone Number: +353(0)469082000</p>
+        <p>Email Address: info@boliden.com</p>
+    </div>
+    <div >
+        <h2>Inquiries</h2>
+        <form action="mailto:d23126029@mytudublin.ie" method="get" name="myform" onsubmit="return validateForm()">
+			<fieldset>
+				<legend>Ensure all fields of Inquiry Form are filled in before Selecting Submit</legend>
+				<!-- <label for="first-name">First Name:</label> -->
+				<label for="first-name">First Name:</label>
+				<input type="text" id="first-name" name="first-name">
+				<!-- <label for="last-name">Last Name:</label> -->
+				<label for="last-name">Second Name:</label>
+				<input type="text" id="last-name" name="last-name"> 
+				<!-- <label for="email">Email:</label> -->
+				<label for="email">Email:</label>
+				<input type="text" id="email" name="email">
+				<label for="query">Query:</label>
+				<textarea id="query" rows="5" cols="60">Input Inquiry Here</textarea>
+				
+				
+				<input type="submit">
+				<input type="reset">
+			</fieldset>
+        </form>
+    </div>
+</section>
+<!-- Java script function to ensure all fields in the form are submitted when the user selects the submit a query -->
+<script>
+        function validateForm() {
+            let firstName = document.getElementById("first-name").value;
+            let lastName = document.getElementById("last-name").value;
+            let email = document.getElementById("email").value;
+            let query = document.getElementById("query").value;
+
+            <!-- Check if a field has not filled in -->
+            if (firstName === "" || lastName === "" || email === "" || query === "") {
+                alert("All fields must be filled out.");
+                return false; <!-- Stop user from submitting query -->
+            }
+
+            return true; <!-- All fields are filled then the query is submitted  -->
+        }
+    </script>
+
+<!-- Copyright/Disclaimer on All Pages -->
+<footer class="footer">
+        <p>This site is not affiliated with Boliden Tara Mines</p>
+    </footer>
+</body>
+</html>

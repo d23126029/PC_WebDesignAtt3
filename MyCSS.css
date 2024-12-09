@@ -1,0 +1,604 @@
+
+/* The Navigation Bar */
+/* Style the nav bar */
+nav {
+	position: sticky; /* keep nav bar visible if the user scrolls down any of the pages */
+	width: 100%;
+	top: 0;
+	z-index: 10;
+	background-color: rgba(255, 255, 255, 0.7); /* background colour for behind text on teh image */
+	/* background-color: white; */	
+	}
+	/* nav bar span the full width*/
+nav ul {
+		list-style-type: none;
+		display: flex; 
+		justify-content: space-around; 
+		padding: 10px 0;
+		margin: 0; 
+		} 
+		/* Style the unordered list in  the nav */	
+nav ul li {
+			margin: 0 15px;
+			} /* Space betweent the links */
+
+/* Link styles for the navigation */
+nav ul li a:link {
+    color: blue;          
+    text-decoration: none; 
+	}
+nav ul li a:visited {
+    color: purple;      
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: red;           
+    text-decoration: underline; 
+}
+
+nav ul li a:active {
+    color: orange;       
+    text-decoration: underline;
+}
+
+/* Working:Mobile Friendly Style for Navagation Bar */
+@media only screen and (max-width: 600px) {
+    nav ul {
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+        padding: 0; 
+        margin: 0; 
+        list-style: none; 
+    }
+    nav ul li a {
+        text-align: center; 
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.7);; 
+        color: black; 
+        text-decoration: none; 
+    }
+	nav ul li {
+        text-align: center; 
+        margin: 0; 
+    }
+}
+
+/* Style for Main Image to be displayed on all pages */
+.Aerial_Image_Tara {
+    width: 100%;
+    height: 300px;
+    background-image: url('Aerial_TaraMines1.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    margin: 20px 0;
+    position: relative;
+    z-index: 1; 
+}
+.Aerial_Image_Tara h1 {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+    color: black;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.7); /* background colour for behind text on teh image */
+    padding: 5px;
+}
+
+/* Working:Mobile Display For Homepage grid */
+@media only screen and (min-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* Set  Number of Columns */
+    }
+    .Aerial_Image_Tara {
+        height: 400px; 
+    }
+}
+
+/* Working:Tablet Display for the homepage grid */
+@media only screen and (min-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr); /* Set the Grid */
+    }
+    .Aerial_Image_Tara {
+        height: 300px; 
+    }
+}
+
+/* Style for Grid on for Homepage */
+.grid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows : 1fr;
+	grid-gap: 10px;
+	padding: 20px; 
+	flex-grow: 1;
+	height: auto;
+	}
+.grid-item {
+	background-color: lightgrey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative; 
+	overflow: hidden;
+	font-size: 40px;
+	border: 3px solid black;
+	aspect-ratio: 1/1;
+	}
+.grid-item a {
+	text-decoration: none; 
+	color: black; 
+	display:flex; 
+	width: 100%;
+	height: 100%; 
+	text-align: center; 
+	align-items: center;
+	justify-content: center;
+	}
+	
+/* Style individual grid sections */
+/* Set the backgroudn of each of the buttons in the grid */	
+.grid-item:nth-child(1){
+	background-image: url('MapIreland.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+}
+
+.grid-item:nth-child(2){
+	background-image: url('MineCycle_Icon.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+}	
+
+.grid-item:nth-child(3){
+	background-image: url('AboutUs_Icon.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+}	
+
+.grid-item:nth-child(4){
+	background-image: url('Media_Icon.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+	/* opacity: 0.5; /* Adjust the transparency of the image:Not Used */
+}
+.grid-item:nth-child(5){
+	background-image: url('Jobs_Icon.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+}
+.grid-item:nth-child(6){
+	background-image: url('ContactUs_Icon.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+}
+
+/* Working:Mobile Friendly Grid Set Up For Homepage */
+@media only screen and (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* Set The Grid */
+        grid-gap: 10px;
+    }
+    .grid-item {
+        text-align: center;
+		background-color: lightblue; 
+		
+    }
+}
+
+/* Working:Tablet Friendly Set Up For Homepage */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+	body{
+		display:flex;
+		flex-direction:column;
+		min-height: 100vh;
+		margin:0;
+	}
+	.Aerial_Image_Tara{
+		flex-shrink:0;
+	}
+	.grid-container{
+		display: flex;
+		flex-grow:1;
+		align-items:stretch;
+	}
+    .grid {
+		display:grid;
+        grid-template-columns: repeat(3, 1fr); /* Set The Grid */
+        grid-template-rows: repeat(3, 1fr); /* Set The Grid */
+		grid-gap: 20px;
+		width: 100%;
+		height: 100%;
+    }
+
+    .grid-item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+        aspect-ratio: 1/1; /* Ensure the height and width of the grid items is equal */
+		font-size: 20px;
+		background-color: green; 
+		
+    }
+	.grid-item a {
+		width:100%;
+		height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: black;
+        font-size: 18px; 
+    }
+}
+
+/* Class for styling the footer to be displayed on each web page */
+footer.footer { 
+				text-align: center; 
+				padding: .1px; 
+				width:100%; 
+				margin-top: auto; 
+				font-size: 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				}
+
+/* Working:Change footer size for mobile device */
+@media only screen and (max-width: 600px) {
+    footer.footer {
+        font-size: 8px; 
+    }
+    .Aerial_Image_Tara {
+        height: 200px; 
+    }
+    .Aerial_Image_Tara h1 {
+        font-size: 16px; 
+    }
+}
+
+
+/* Display for the location page Information */
+/* Set up the grid layout */
+.location {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    grid-template-rows: auto;
+    height: 100vh; 
+    gap: 10px;
+}
+
+/* Set up the 1st column of the grid: Map of Ireland will be  background  image*/
+.location > .map {
+    grid-column: 1; 
+    background-image: url('MapIreland.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100%; 
+	border: 3px solid black;
+}
+
+/* Set up the 2nd column with addresses */
+.location > .address {
+    grid-column: 2; 
+    display: grid; 
+    grid-template-rows: repeat(3, 1fr); 
+    gap: 10px; 
+    padding: 10px;
+    text-align: left;
+}
+
+/* Individual address items */
+.address > div {
+    padding: 10px;	
+}
+/* Background style for each address field */
+/* Background for Mine Site */
+.address > div:nth-child(1) {
+    background-color: green; 
+    background-image: url('portal.jpg');
+	background-size: cover;
+	background-position: center;
+    color: yellow;
+	border: 3px solid black;
+}
+/* Background for Tailings Facility */
+.address > div:nth-child(2) {
+    background-color: red; 
+	background-image: url('TMF_Stage_6.jpg');
+	background-size: cover;
+	background-position: center;
+    color: yellow;
+	border: 3px solid black;	
+}
+/* Background for Dublin Port */
+.address > div:nth-child(3) {
+    background-color: pink;
+	background-image: url('DublinPort.jpg');
+	background-size: cover;
+    background-position: center;	
+    color: yellow; 
+	border: 3px solid black;
+}
+/* Working:Change  display for mobile */
+@media only screen and (max-width: 600px) {
+  .location {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+  }
+
+  .location > .map {
+    height: auto; 
+  }
+
+  .address > div {
+    height: auto; 
+  }
+}
+
+/* Style for the about us page */
+.about {
+    text-align: center; 
+    margin-top: 20px; 
+    width: 100%; 
+	color:yellow;
+	background-color: lightgrey;
+	background-image: url('stopemucking.jpg');
+	background-size: cover;
+    background-position: center;
+}
+
+/* Style for Display on Media Page */
+.media {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows : 1fr;
+	grid-gap: 10px;
+	padding: 20px; 
+	flex-grow: 1;
+	margin-top: 20px; 
+	}
+.media-item {
+	background-color: lightgreen;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative; 
+	overflow: hidden;
+	font-size: 20px;
+	border: 3px solid black;
+	aspect-ratio: 1 / 1;
+	}
+.media-item a {
+	text-decoration: none; 
+	color: red; 
+	display:flex; 
+	width: 100%;
+	height: 100%; 
+	text-align: center; 
+	align-items: center;
+	justify-content: center;
+	}
+
+.media-item img {
+    max-width: 50%;
+	height: 50%;	
+    object-fit: cover;    
+}
+/* Images added as background to each link */
+/* Originally Used Thumbnails but these made a mess of the display, work around was to set each image as a background */
+.media-item:nth-child(1){
+	background-image: url('TaraDeepLasers.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+}
+.media-item:nth-child(2){
+	background-image: url('remote_control_mucking.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+}
+.media-item:nth-child(3){
+	background-image: url('rockbreaker.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+}
+.media-item:nth-child(4){
+	background-image: url('scoop_loading_truck.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+}
+.media-item:nth-child(5){
+	background-image: url('TS16_Underground.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+}
+.media-item:nth-child(6){
+	background-image: url('hovermap_Scan.jpeg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+}
+.media-item:nth-child(7){
+	background-image: url('tunnel.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+}
+.media-item:nth-child(8){
+	background-image: url('TruckPortal.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+}
+.media-item:nth-child(9){
+	background-image: url('TARA_MINES7.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+}
+.media-item:nth-child(10){
+	background-image: url('hovermap.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: white; 
+    font-weight: bold;
+}
+
+
+
+/* Mobile Friendly Style for the Media page */
+/* Had an Issue with this,code was not working but I was able to fix using the CSS validator(found a "}"  causing the code not to work */
+@media only screen and (max-width: 600px) {
+    .media {
+        display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(5, 1fr);    
+        gap: 10px;
+        padding: 20px;
+        flex-grow: 1;
+        margin-top: 20px;
+    }
+
+    .media-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        font-size: 20px;
+        border: 3px solid black;
+        aspect-ratio: 1/1;
+    }
+
+    .media-item a {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .media-item img {
+        max-width: 50%;
+        height: 50%;
+        object-fit: cover;
+    }
+}
+/* Style for Contact Page */
+.contact {
+	display : grid;
+	grid-template-columns : 1fr 2fr;
+	gap : 20px;
+	padding : 20px;
+	margin-top : 20px;
+	background-image : url("scoopdriving.jpg");
+	background-size : cover;
+	background-position : center;
+	color : yellow;
+	} /* PROBLEM TO FIX: IF I REMOVE THIS BRACKET IT WILL FIX THE DISPLAY THE MOBILE DISPLAT OF THE CONTACT PAGE BUT ON THE CAREERS PAGE CAROSOUL THE
+	TEXT BECOMES MESSED UP (Fixed/ text is now ok but images look like they are being cut off) */ 
+
+/* Style for the Display of the Contact Page with the enquiry form */
+.contact h2 { 
+    font-size: 24px; 
+    margin-bottom: 15px; 
+}
+.contact input[type="text"], .contact textarea { 
+    width: 100%; 
+    padding: 8px; 
+    margin-bottom: 20px; 
+    border: 1px solid #ccc; 
+}
+.contact input[type="submit"] { 
+    padding: 10px 20px; 
+    background-color: green; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+}
+.contact input[type="submit"]:hover { 
+    background-color: darkblue; 
+}
+
+/* WORKING:Mobile friendly Style for the Contact page */
+@media only screen and (max-width: 600px) {
+    .contact { 
+        grid-template-columns: 1fr; 
+        gap: 15px; 
+        padding: 10px; 
+    }
+    .contact h2 { 
+        font-size: 18px; 
+        margin-bottom: 10px; 
+    }
+    .contact input[type="text"], .contact textarea { 
+        font-size: 14px; 
+    }
+    .contact input[type="submit"] { 
+        font-size: 14px; 
+    }
+}
+
+/* Style for text displayed in carousel on careers page */
+.carousel-caption {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    color: white; 
+    padding: 20px; 
+    text-align: center; 
+    font-size: 25px;
+	top: 50%;	/* Added to adjust text position within teh carousel */
+	left: 50%;
+}
+
+
+/* Display style for the Mine Cycle Page */
+/* NOT WORKING CODE    NEEDS TO BE UPDATED */
+/* this code works when used on its own (in a diff css file and linked to the page) but when I put it in this css file its stops working */
+.frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.frame iframe {
+    width: 80%; 
+    height: 450px; /* Set height  */
+    max-width: 1200px; /* Set width  */
+    border: none; 
+} 
+
